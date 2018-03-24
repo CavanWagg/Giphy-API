@@ -1,22 +1,39 @@
 //we require all apps that use the GIPHY API to conspicuously display "Powered By GIPHY" attribution marks where the API is utilized.
+$(document).ready(function()   {
+//search term convert to word1+word2
+  let topics = [];
 
-var topics = [];
-var apiKey = 'iH3Fcen9y5uSswz6jjuqZGmlwaKDbryN';
+  
+  
 
+const renderGiphy = function(giphyInput){
+  var url = "http://api.giphy.com/v1/gifs/search";
+   url += '?' + $.param({
+     'api_key': 'iH3Fcen9y5uSswz6jjuqZGmlwaKDbryN',
+     'q': giphyInput,
+     'limit': 10,
+     'rating': 'g'
+   })
+  
 
+   var xhr = $.get(url);
+xhr.done(function(response) { 
+  console.log("success got data", response); 
 
-var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=" + apiKey + "&limit=5");
-xhr.done(function(data) { 
-  console.log("success got data", data);
- });
+  var giphs = response.data
+$('#giphyDiv').append(`<button value=${giphyInput} id='giphyBtn' class='btn'>${giphyInput}</button>`)
+for (i in giphs){
+  $('#content').append(`<img src='${giphs[i].images.original.url}'>`)
+}
 
+});
+};
 
- //grab text of input field
- var giphyInput = $('#searchTerm').val().trim();
- console.log(giphyInput);
+  $('#giphyBtn').click(function() {   
+    let giphyInput = $(this).val().trim();
+    console.log('woot!');
+    renderGiphy(giphyInput);
+  });
 
- //on click create a button containing that value
-
- //on click append GIF images to the page
-
- 
+   
+})
