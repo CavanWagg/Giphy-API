@@ -5,14 +5,12 @@
 
 $(document).ready(function()   {
 //search term convert to word1+word2
-  let topics = ['lindy-hop', 'bachata', 'salsa', 'merengue', 'break','samba', 'flamenco', 'tap-dance' ];
+  let topics = ['lindy-hop', 'bachata', 'salsa', 'break', 'flamenco', 'tap-dance' ];
   
 for (i=0; i<topics.length; i++) {
   console.log(topics[i]);
   $('#giphyDiv').append(`<a value=${topics[i]} id='giphyBtn' class='giphyBtn btn-primary btn'>${topics[i]}</a>`);
 }
-
-
 
 //On click, create button with value and text inside search
   $('#search').click(function()  {
@@ -29,12 +27,26 @@ for (i=0; i<topics.length; i++) {
     $('#content').empty();
     renderGiphy(giphyInput);
   });
-  
+
+  //on click switch gif to
+
+  $(document).on("click", ".image", function(){
+    var state = $(this).attr('data-state');
+    if ( state == 'still'){
+        $(this).attr('src', $(this).data('animate'));
+        $(this).attr('data-state', 'animate');
+    }else{
+        $(this).attr('src', $(this).data('still'));
+        $(this).attr('data-state', 'still');
+    }
+    console.log('water')
+  });
 
 const renderGiphy = function(giphyInput){
   var url = "http://api.giphy.com/v1/gifs/search";
    url += '?' + $.param({
      'api_key': 'iH3Fcen9y5uSswz6jjuqZGmlwaKDbryN',
+     //add dance to search term so that search stays consistent with the topic
      'q': `${giphyInput}+dance`,
      'limit': 10,
      'rating': 'pg-13'
@@ -48,8 +60,20 @@ xhr.done(function(response) {
   var giphs = response.data
 
 for (i in giphs){
-  $('#content').append(`<img src='${giphs[i].images.original.url}'> rating: ${giphs[i].rating}`)
+  //data-still contains still url image of giph
+  //data-animate contains giph url
+  //set data-state to initially 'animate'
+  //src is equal to data-animate,
+  $('#content').append(`<img class='image'
+  data-still='${giphs[i].images.fixed_height_small_still.url}' 
+  data-animate='${giphs[i].images.fixed_height_small.url}'
+  data-state='still'
+  src='${giphs[i].images.fixed_height_small_still.url}'> 
+  rating: ${giphs[i].rating}`)
 }
+
+//On click pause or animate giph
+
 
 });
 

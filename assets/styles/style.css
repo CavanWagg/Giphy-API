@@ -2,3 +2,6 @@
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
+.jumbotron {
+  background-color: tomato;
+}
