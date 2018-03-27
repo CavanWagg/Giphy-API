@@ -64,11 +64,11 @@ for (i in giphs){
   //data-animate contains giph url
   //set data-state to initially 'animate'
   //src is equal to data-animate,
-  $('#content').append(`<div class='giph-container col-lg-4'><img class='image img-fluid' 
+  $('#content').append(`<div class='giph-container col-4'><img class='image img-fluid' 
   data-still='${giphs[i].images.fixed_height_small_still.url}' 
   data-animate='${giphs[i].images.fixed_height_small.url}'
   data-state='still'
-  src='${giphs[i].images.fixed_height_small_still.url}'><figcaption class='text-center rating-text'> 
+  src='${giphs[i].images.fixed_height_small_still.url}'><figcaption class='rating-text'> 
   rating: ${giphs[i].rating}</figcaption> </div>`)
 }
 
