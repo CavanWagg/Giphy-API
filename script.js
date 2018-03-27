@@ -9,13 +9,13 @@ $(document).ready(function()   {
   
 for (i=0; i<topics.length; i++) {
   console.log(topics[i]);
-  $('#giphyDiv').append(`<a value=${topics[i]} id='giphyBtn' class='giphyBtn btn-primary btn'>${topics[i]}</a>`);
+  $('#giphyDiv').append(`<a value=${topics[i]} class='giphyBtn btn-primary btn'>${topics[i]}</a>`);
 }
 
 //On click, create button with value and text inside search
   $('#search').click(function()  {
     buttonText = $('#searchTerm').val().trim();
-    $('#giphyDiv').append(`<a value=${buttonText} id='giphyBtn' class='giphyBtn btn-primary btn'>${buttonText}</a>`)
+    $('#giphyDiv').append(`<a value=${buttonText} class='giphyBtn btn-primary btn'>${buttonText}</a>`)
   // console.log(buttonText);
   });
 
@@ -48,7 +48,7 @@ const renderGiphy = function(giphyInput){
      'api_key': 'iH3Fcen9y5uSswz6jjuqZGmlwaKDbryN',
      //add dance to search term so that search stays consistent with the topic
      'q': `${giphyInput}+dance`,
-     'limit': 10,
+     'limit': 12,
      'rating': 'pg-13'
    })
    console.log(url);
@@ -64,12 +64,12 @@ for (i in giphs){
   //data-animate contains giph url
   //set data-state to initially 'animate'
   //src is equal to data-animate,
-  $('#content').append(`<img class='image'
+  $('#content').append(`<div class='col-4 single-giph'><img class='image center-block col-12' 
   data-still='${giphs[i].images.fixed_height_small_still.url}' 
   data-animate='${giphs[i].images.fixed_height_small.url}'
   data-state='still'
-  src='${giphs[i].images.fixed_height_small_still.url}'> 
-  rating: ${giphs[i].rating}`)
+  src='${giphs[i].images.fixed_height_small_still.url}'><figcaption class=' rating-text'> 
+  rating: ${giphs[i].rating}</figcaption> </div>`)
 }
 
 //On click pause or animate giph

@@ -5,27 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/styles/style.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Dance API</title>
 </head>
 
 <body>
-    <div class="jumbotron">
-        <h1 class="display-3">GIPHY API</h1>
-        <hr>
+    <div class="container">
+        <div id="giphyDiv"></div>
+        <div class="header">
+            <h1 class="display-3">GIPHY API</h1>
+            <hr>
+        </div>
+        <div class="form-group">
+            <label for="usr">Add a Dance!</label>
+            <input type="text" placeholder='dance' class="form-control" id="searchTerm">
+        </div>
+        <div class="btn-group" role="group">
+            <a class="btn btn-primary btn-md glyphicon glyphicon-search" id="search" href="#" role="button">Search</a>
+        </div>
+        <div class="btn-area row" id="content"></div>
     </div>
-    <div id="giphyDiv"></div>
-    <div class="form-group">
-        <label for="usr">Add a GIPHY!!!</label>
-        <input type="text" placeholder='dance' class="form-control" id="searchTerm">
-    </div>
-    <div class="btn-group" role="group">
-        <a class="btn btn-primary btn-md glyphicon glyphicon-search" id="search" href="#" role="button">Search</a>
-    </div>
-    <div class="btn-area" id="content"></div>
-
 
     <script src="script.js"></script>
 

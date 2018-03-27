@@ -2,6 +2,18 @@
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
-.jumbotron {
-  background-color: tomato;
+* {
+  font-size: 100%;
+  font-family: 'Inconsolata', monospace;
+}
+#search,
+#searchTerm {
+  margin: 10px 0;
+}
+.giphyBtn {
+  margin: 5px 5px;
+}
+img {
+  padding: 10px;
+  height: 100px;
 }
