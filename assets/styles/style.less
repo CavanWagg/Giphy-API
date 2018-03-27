@@ -1,21 +1,60 @@
+@color-primary-0: #8C2F5E;	/* Main Primary color */
+@color-primary-1: #D28CAF; /* lightest */
+@color-primary-2: #AF5784;
+@color-primary-3: #69113E;
+@color-primary-4: #460024; /* darkest */
 
-.pause {
-  animation-play-state: paused;
+
+
+
+
+
+#giphyDiv{
+  color: white;
 }
 
 * {
+  color: white;
   font-size: 100%;
   font-family: 'Inconsolata', monospace;
 }
 #search,
 #searchTerm {
   margin: 10px 0;
+  background: @color-primary-1;
+  border: solid 2px @color-primary-4;
+  color: black;
+  font-weight: bold;
+  max-width: 200px;
+}
+body {
+  background-color: @color-primary-0;
 }
 
 .giphyBtn {
+  background-color: @color-primary-3;
+  color: white;
+  border: solid 2px @color-primary-1;
   margin: 5px 5px;
 }
+h1 {
+  font-size: 3em;
+}
+hr {
+  width: 50px;
+  background-color: @color-primary-3;
+}
 img {
-  padding: 10px;
-  height: 100px;
+  border: 2px solid @color-primary-4;
+  height: auto;
+  max-width: 100%;
+}
+label {
+  font-size: 1.5em;
+}
+figcaption{
+  font-size: .75em;
+}
+.giph-container {
+  height: 150px;
 }

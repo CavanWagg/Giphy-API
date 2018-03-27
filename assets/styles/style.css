@@ -1,19 +1,50 @@
-.pause {
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
+/* Main Primary color */
+/* lightest */
+/* darkest */
+#giphyDiv {
+  color: white;
 }
 * {
+  color: white;
   font-size: 100%;
   font-family: 'Inconsolata', monospace;
 }
 #search,
 #searchTerm {
   margin: 10px 0;
+  background: #D28CAF;
+  border: solid 2px #460024;
+  color: black;
+  font-weight: bold;
+  max-width: 200px;
+}
+body {
+  background-color: #8C2F5E;
 }
 .giphyBtn {
+  background-color: #69113E;
+  color: white;
+  border: solid 2px #D28CAF;
   margin: 5px 5px;
 }
+h1 {
+  font-size: 3em;
+}
+hr {
+  width: 50px;
+  background-color: #69113E;
+}
 img {
-  padding: 10px;
-  height: 100px;
+  border: 2px solid #460024;
+  height: auto;
+  max-width: 100%;
+}
+label {
+  font-size: 1.5em;
+}
+figcaption {
+  font-size: .75em;
+}
+.giph-container {
+  height: 150px;
 }

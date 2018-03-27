@@ -5,7 +5,7 @@
 
 $(document).ready(function()   {
 //search term convert to word1+word2
-  let topics = ['lindy-hop', 'bachata', 'salsa', 'break', 'flamenco', 'tap-dance' ];
+  let topics = ['lindy-hop', 'salsa', 'break', 'flamenco', 'tap-dance' ];
   
 for (i=0; i<topics.length; i++) {
   console.log(topics[i]);
@@ -64,11 +64,11 @@ for (i in giphs){
   //data-animate contains giph url
   //set data-state to initially 'animate'
   //src is equal to data-animate,
-  $('#content').append(`<div class='col-4 single-giph'><img class='image center-block col-12' 
+  $('#content').append(`<div class='giph-container col-lg-4'><img class='image img-fluid' 
   data-still='${giphs[i].images.fixed_height_small_still.url}' 
   data-animate='${giphs[i].images.fixed_height_small.url}'
   data-state='still'
-  src='${giphs[i].images.fixed_height_small_still.url}'><figcaption class=' rating-text'> 
+  src='${giphs[i].images.fixed_height_small_still.url}'><figcaption class='text-center rating-text'> 
   rating: ${giphs[i].rating}</figcaption> </div>`)
 }
 
